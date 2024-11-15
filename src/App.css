@@ -1,0 +1,82 @@
+h1{
+  text-align: center;
+}
+
+.listContainer li{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;  
+  margin: auto;
+  width: 60%;  
+  margin-top: 10px;
+}
+
+.taskList{
+  background-color: rgb(66, 68, 189);
+  color: white;
+  font-weight: bolder;
+  height: 40px;    
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 10px;
+  display: flex;
+}
+
+.closeBtn {
+  font-size: 25px;  
+} 
+
+.newTask {
+  display: flex;  
+  justify-content: center;
+  padding: 30px;
+  margin: auto;  
+}
+
+.newTask input{
+  font-size: larger;
+  width: 500px;
+  border: 2pt solid rgb(165, 105, 27);
+  border-radius: 10px;
+  height: 40px;
+  
+  
+}
+
+.newTask button{
+  background-color: blue;
+  color: white;
+  font-size: large;
+  border-radius: 10px;
+  width: 100px;
+  height: 50px;
+  
+}
+
+.listHead {
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.taskList:hover {
+  cursor: pointer;
+  background-color: rgb(84, 84, 243);
+
+}
+
+.strikeTask {
+  text-decoration: line-through red 2pt;
+
+}
+
+.main {
+  height: 1072px;
+  margin: 0;
+  background-color: rgb(230, 253, 253);
+}
+
+*{
+  margin: 0;
+}
