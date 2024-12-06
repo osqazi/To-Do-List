@@ -1,58 +1,97 @@
-h1{
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Background Image */
+.bgImage {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('./bg.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center; 
+  z-index: -1; 
+}
+
+/* Main container */
+.main {
+  min-height: 100vh; /* Adjust to fit content */
+  margin: 0;
+}
+
+/* Headings */
+h1 {
   text-align: center;
 }
 
-.listContainer li{
+/* List Container */
+.listContainer li {
   display: flex;
   justify-content: space-between;
-  list-style: none;  
+  list-style: none;
   margin: auto;
-  width: 60%;  
+  width: 60%;
   margin-top: 10px;
 }
 
-.taskList{
+/* Task List */
+.taskList {
   background-color: rgb(66, 68, 189);
   color: white;
   font-weight: bolder;
-  height: 40px;    
+  height: 40px;
   align-items: center;
   padding-left: 20px;
   padding-right: 10px;
   display: flex;
 }
 
-.closeBtn {
-  font-size: 25px;  
-} 
-
-.newTask {
-  display: flex;  
-  justify-content: center;
-  padding: 30px;
-  margin: auto;  
+.taskList:hover {
+  cursor: pointer;
+  background-color: rgb(84, 84, 243);
 }
 
-.newTask input{
+/* Close Button */
+.closeBtn {
+  font-size: 25px;
+}
+
+/* New Task Section */
+.newTask {
+  display: flex;
+  flex-wrap: wrap; /* Allows stacking on smaller screens */
+  justify-content: center;
+  padding: 30px;
+  margin: auto;
+}
+
+.newTask input {
   font-size: larger;
-  width: 500px;
+  width: 100%; /* Full width of the page */
+  max-width: 800px; /* Prevents it from becoming too wide on large screens */
   border: 2pt solid rgb(165, 105, 27);
   border-radius: 10px;
   height: 40px;
-  
-  
+  margin-bottom: 10px; /* Adds space between input and button */
 }
 
-.newTask button{
+.newTask button {
   background-color: blue;
   color: white;
   font-size: large;
   border-radius: 10px;
-  width: 100px;
+  width: 100%; /* Full width for smaller screens */
+  max-width: 100px; /* Keeps button width controlled */
   height: 50px;
-  
 }
 
+/* List Head */
 .listHead {
   font-size: xx-large;
   display: flex;
@@ -60,23 +99,78 @@ h1{
   margin: 0;
 }
 
-.taskList:hover {
-  cursor: pointer;
-  background-color: rgb(84, 84, 243);
-
-}
-
+/* Strike Task */
 .strikeTask {
   text-decoration: line-through red 2pt;
-
 }
 
-.main {
-  height: 1072px;
-  margin: 0;
-  background-color: rgb(230, 253, 253);
+/* Identity */
+.identity {
+  text-shadow: 2px gray;
+  font-size: 2rem;
+  transform: rotate(180deg);
+  writing-mode: vertical-rl;
 }
 
-*{
-  margin: 0;
+/* Media Queries */
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  .listContainer li {
+    width: 80%;
+  }
+
+  .newTask input {
+    font-size: medium;
+    width: 90%; /* 90% on medium screens */
+  }
+
+  .newTask button {
+    width: 90%; /* Adjusts the button width */
+  }
+
+  .listHead {
+    font-size: large;
+  }
+
+  .closeBtn {
+    font-size: 20px;
+  }
+}
+
+/* Small screens (mobile phones) */
+@media (max-width: 480px) {
+  .listContainer li {
+    flex-direction: column;
+    width: 90%;
+    text-align: center;
+  }
+
+  .taskList {
+    font-size: small;
+    padding: 10px;
+  }
+
+  .newTask input {
+    width: 95%; /* Almost full width on mobile */
+    font-size: small;
+  }
+
+  .newTask button {
+    width: 95%; /* Full width for mobile buttons */
+    height: 40px;
+    font-size: small;
+  }
+
+  .listHead {
+    font-size: medium;
+  }
+
+  .closeBtn {
+    font-size: 18px;
+  }
+
+  .identity {
+    font-size: 1.5rem;
+  }
 }

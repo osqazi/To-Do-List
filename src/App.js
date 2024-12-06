@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import { data } from './data';
+import bg from './bg.jpg'
+
 
 function App() {
   let [ntask, setnTask]=useState([]);
@@ -11,6 +13,7 @@ const addNewTask=(event)=>{
   if(!ntask.includes(task)){
     let finalList=[...ntask, task];
     setnTask(finalList)
+    event.target.task.value = "";
   } else{
     alert("Task Already Added")
   }
@@ -37,6 +40,11 @@ let list = ntask.map((v,i)=>{
       <div className='listContainer'>
         <h3 className='listHead'>To-Do List</h3>  
         {list} 
+      </div>
+      <div className='bgImage'>
+      </div>
+      <div className='identity'>
+        <h3>Developed by Owais Qazi</h3>
       </div>
 
     </div>
